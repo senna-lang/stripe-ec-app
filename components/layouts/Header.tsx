@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import { Button } from '../ui/button';
+import AuthServerButton from '../elements/AuthServerButton';
 
 const Header = () => {
   return (
@@ -11,9 +12,9 @@ const Header = () => {
       <Link href={'/'} className="ml-4">
         <Button variant="outline">Price</Button>
       </Link>
-      <Link href={'/'} className=" ml-auto">
-        <Button variant="outline">Login</Button>
-      </Link>
+      <div className=' ml-auto'>
+        <AuthServerButton/>
+      </div>
     </div>
   );
 };
