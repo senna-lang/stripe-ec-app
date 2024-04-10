@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { getAllLessons } from '@/lib/supabase';
+import { Button } from '@mui/material';
 
 export default async function Home() {
   const lessons = await getAllLessons();
@@ -24,6 +25,7 @@ export default async function Home() {
             </Card>
           </Link>
         ))}
+        <Button variant="contained">text</Button>
       </div>
     </main>
   );
