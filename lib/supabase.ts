@@ -16,3 +16,12 @@ export const getLessonDetail = async (id: number,supabase:SupabaseClient) => {
     .single();
   return data;
 };
+
+export const getPremContents = async (id: number,supabase:SupabaseClient) => {
+  const { data } = await supabase
+    .from('premium_contents')
+    .select('video_url')
+    .eq('id', id)
+    .single();
+  return data;
+};
