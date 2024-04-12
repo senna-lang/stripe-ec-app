@@ -10,7 +10,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: 'Invalid API_SECRET' });
   }
   const data = await req.json();
-  const { email, id } = data;
+  const { email, id } = data.record;
   const stripe = new initStripe(process.env.STRIPE_SECRET_KEY!);
   const customer = await stripe.customers.create({
     email,
