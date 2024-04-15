@@ -9,7 +9,7 @@ const Header = () => {
       <Link href={'/'}>
         <Button variant="outline">Home</Button>
       </Link>
-      <Link href={'/'} className="ml-4">
+      <Link href={'/price'} className="ml-4">
         <Button variant="outline">Price</Button>
       </Link>
       <div className=' ml-auto'>
