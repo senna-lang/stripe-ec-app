@@ -1,4 +1,3 @@
-import { getProfile } from '@/lib/supabase';
 import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { NextRequest, NextResponse } from 'next/server';
 import { cookies } from 'next/headers';
@@ -29,7 +28,7 @@ export async function GET(
     payment_method_types: ['card'],
     line_items: [{ price: priceId, quantity: 1 }],
     success_url: 'http://localhost:3000/payment/success',
-    cancel_url: 'http://localhost:3000/payment/cansel',
+    cancel_url: 'http://localhost:3000/payment/cancelled',
   });
 
   return NextResponse.json({ id: session.id });
