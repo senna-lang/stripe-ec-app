@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import { Typography } from '@mui/material';
 import Stripe from 'stripe';
 import SubscriptionButton from './SubscriptionButton';
+import AuthServerButton from './AuthServerButton';
 
 const PriceCard = ({
   id,
@@ -14,7 +15,7 @@ const PriceCard = ({
   subsButton,
   accountButton,
 }: {
-  id:string;
+  id: string;
   name: string;
   price: string | null;
   interval: Stripe.Price.Recurring.Interval;
@@ -35,8 +36,8 @@ const PriceCard = ({
         </Typography>
       </CardContent>
       <CardActions>
-        {subsButton && <SubscriptionButton planId={id}/>}
-        {accountButton && <Button size="small">ログイン</Button>}
+        {subsButton && <SubscriptionButton planId={id} />}
+        {accountButton && <AuthServerButton />}
       </CardActions>
     </Card>
   );
