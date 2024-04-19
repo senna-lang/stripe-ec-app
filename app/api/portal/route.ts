@@ -20,7 +20,7 @@ export async function GET(req: NextRequest) {
   const stripe = new initStripe(process.env.STRIPE_SECRET_KEY!);
   const session = await stripe.billingPortal.sessions.create({
     customer: stripe_customer_data?.stripe_customer,
-    return_url: 'http://localhost:3000/subscription',
+    return_url: 'https://main.d2yppohgt9e0z6.amplifyapp.com/subscription',
   });
   
   return NextResponse.json({ url: session.url });
