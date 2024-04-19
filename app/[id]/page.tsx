@@ -13,7 +13,7 @@ const LessonContentPage = async ({ params }: { params: { id: number } }) => {
     await getLessonDetail(id, supabase),
     await getPremContents(id, supabase),
   ]);
-  const videoId = extractYouTubeVideoId(video?.video_url) as string;
+  const videoId = extractYouTubeVideoId(video?.video_url!) as string;
   return (
     <div className=" w-full max-w-3xl mx-auto py-16 px-8">
       <Breadcrumbs>
