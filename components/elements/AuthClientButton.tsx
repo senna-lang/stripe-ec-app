@@ -2,12 +2,13 @@
 
 import {
   Session,
+  User,
   createClientComponentClient,
 } from '@supabase/auth-helpers-nextjs';
 import { Button } from '../ui/button';
 import { useRouter } from 'next/navigation';
 
-const AuthClientButton = ({ session }: { session: Session | null }) => {
+const AuthClientButton = ({ session }: { session: User | null }) => {
   const router = useRouter();
   const supabase = createClientComponentClient();
 

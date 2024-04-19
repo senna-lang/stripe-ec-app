@@ -5,13 +5,13 @@ import { supabaseServer } from '@/lib/supabaseClient';
 
 const PricePage = async () => {
   const supabase = supabaseServer();
-  const { data: user } = await supabase.auth.getSession();
+  const { data: user } = await supabase.auth.getUser();
   const [plans, profile] = await Promise.all([
     await getAllPlans(),
     await getProfile(supabase),
   ]);
-  const showSubscribeButton = !!user.session && !profile?.is_subscribed;
-  const showCreateAccount = !user.session;
+  const showSubscribeButton = !!user && !profile?.is_subscribed;
+  const showCreateAccount = !user;
   return (
     <div className="w-full max-w-3xl mx-auto py-16 flex justify-around">
       {plans.map(plan => (
