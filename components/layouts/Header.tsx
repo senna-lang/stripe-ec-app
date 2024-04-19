@@ -12,8 +12,11 @@ const Header = () => {
       <Link href={'/price'} className="ml-4">
         <Button variant="outline">Price</Button>
       </Link>
-      <div className=' ml-auto'>
-        <AuthServerButton/>
+      <Link href={'/subscription'} className="ml-4">
+        <Button variant="outline">Subscription</Button>
+      </Link>
+      <div className=" ml-auto">
+        <AuthServerButton />
       </div>
     </div>
   );
