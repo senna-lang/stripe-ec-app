@@ -17,6 +17,7 @@ const PricePage = async () => {
     <div className="w-full max-w-3xl mx-auto py-16 flex justify-around">
       {plans.map(plan => (
         <PriceCard
+          key={plan.id}
           id={plan.id}
           name={plan.name}
           price={plan.price}
