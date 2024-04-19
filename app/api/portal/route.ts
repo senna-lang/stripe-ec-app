@@ -19,7 +19,7 @@ export async function GET(req: NextRequest) {
     .single();
   const stripe = new initStripe(process.env.STRIPE_SECRET_KEY!);
   const session = await stripe.billingPortal.sessions.create({
-    customer: stripe_customer_data?.stripe_customer,
+    customer: stripe_customer_data?.stripe_customer!,
     return_url: 'https://main.d2yppohgt9e0z6.amplifyapp.com/subscription',
   });
   
