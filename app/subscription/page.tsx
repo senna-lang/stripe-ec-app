@@ -1,10 +1,9 @@
 import SubscriptionManagementButton from '@/components/elements/SubscriptionManagementButton';
 import { getProfile } from '@/lib/supabase';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { supabaseServer } from '@/lib/supabaseClient';
 
 const Subscription = async () => {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = supabaseServer();
   const profile = await getProfile(supabase);
   return (
     <div className=" w-full max-w-3xl mx-auto py-16 px-8">

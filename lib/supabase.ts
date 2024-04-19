@@ -1,12 +1,9 @@
 import { Database } from '@/types/supabase';
-import {
-  SupabaseClient,
-  createServerComponentClient,
-} from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { SupabaseClient } from '@supabase/auth-helpers-nextjs';
+import { supabaseServer } from './supabaseClient';
 
 export const getAllLessons = async () => {
-  const supabase = createServerComponentClient<Database>({ cookies });
+  const supabase = supabaseServer();
   const { data } = await supabase.from('lesson').select('*');
   return data;
 };

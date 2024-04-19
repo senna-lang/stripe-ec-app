@@ -1,11 +1,10 @@
 import PriceCard from '@/components/elements/PriceCard';
 import { getAllPlans } from '@/lib/stripe';
 import { getProfile } from '@/lib/supabase';
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { supabaseServer } from '@/lib/supabaseClient';
 
 const PricePage = async () => {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = supabaseServer();
   const { data: user } = await supabase.auth.getSession();
   const [plans, profile] = await Promise.all([
     await getAllPlans(),
