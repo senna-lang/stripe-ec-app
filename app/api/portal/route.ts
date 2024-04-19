@@ -1,4 +1,3 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
 import { NextRequest, NextResponse } from 'next/server';
 import { supabaseRouteHandler } from '@/lib/supabaseClient';
 import initStripe from 'stripe';
